@@ -1,0 +1,61 @@
+怎样手动创建索引
+
+既然ElasticSearch可以默认一个索引，那我们也可以自己手动创建一个索引。
+这样写：
+PUT /new-index1
+
+查看一下，返回的结果是：
+{
+  "acknowledged" : true,
+  "shards_acknowledged" : true,
+  "index" : "new-index1"
+}
+小提示：
+ElasticSearch 7.2.0版本以后的都是设置了索引只能有一种类型，那就是_doc这样类型。所以我们新建了索引new-index1，它的类型就是默认的_doc
+
+ElasticSearch 7.2.0之前的版本是可以创建多种类型的，那么如果你想让你之前版本中写的命令能在V7.2.0以后的版本中应用的话，你可以在这样写：
+PUT /new-index2/?include_type_name=true
+这样就兼容了以前版本中的自建的类型了。
+
+
+怎样在多个索引中搜索？
+
+这样：
+GET /twitter,twitter2/_search
+
+
+
+怎样获取映射
+Twitter索引创建以后，怎样查看这个索引中有哪些字段以及这些字段的类型呢？
+这样：
+GET /twitter/_mapping
+查看一下，返回的结果是：
+"twitter" : {
+    "mappings" : {
+      "properties" : {
+        "message" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "post_date" : {
+          "type" : "date"
+        },
+        "user" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        }
+      }
+    }
+  }
+}
+可以看出twitter中的映射有  "message" "post_date" "user"
