@@ -1,0 +1,93 @@
+索引
+
+ElasticSearch 和Kibana两个工具一起使用，对数据进行索引。举个栗子，很多人都有twitter账号，时不时的会发一些tweets。那么我怎样用Kibana索引到一个叫
+kimchy的用户发的某条推文呢？
+
+1.满足一个前提：数据已经添加到Kibana中了。
+想去索引到一个数据，首先得有一个数据库供你去找吧。由于我不是twitter公司的负责人，我没有现成的tweets数据库,所以要展示Kibana的索引功能，我得先自己输入这条数据。
+1.1	如何用Kibana向数据库中增加数据？
+很简单，按以下格式来写命令：
+PUT /twitter/_doc/1
+{
+    "user": "kimchy",
+    "post_date": "2019-12-15T13:12:00",
+    "message": "Trying out Elasticsearch, so far so good?"
+}
+*PUT后面有个空格。Twitter（存储所有用户的tweet信息的分片）是索引的名称，_doc是索引的类型，1是文档的ID。{ }里面是文档的具体内容，内容采用键值对的形式。
+解释：
+在索引名为Twitter的分片中的doc文件中添加1条tweet, 内容是：
+用户kimchy，于2019-12-15日13:12:00发布推文，推文是：Trying out Elasticsearch, so far so good?
+
+点击命令行边上显示的小三角,查看一下自己的输入信息，显示如下：
+{
+  "_index" : "twitter",
+  "_type" : "_doc",
+  "_id" : "1",
+  "_version" : 1,
+  "result" : "updated",
+  "_shards" : {
+    "total" : 2,
+    "successful" : 1,
+    "failed" : 0
+  },
+  "_seq_no" : 31,
+  "_primary_term" : 4
+}
+
+
+我们再添加2条tweet, 格式与写法一样：
+PUT /twitter/_doc/2
+{
+    "user": "kimchy",
+    "post_date": "2019-12-22T14:12:12",
+    "message": "Another tweet, will it be indexed?"
+}
+PUT /twitter/_doc/3
+{
+    "user": "elastic",
+    "post_date": "2010-01-15T01:46:38",
+    "message": "Building the site, should be kewl"
+}
+你可以点击命令行边上显示的小三角，自己查看一下输入的结果。
+
+2.	索引命令的写法
+我们已经添加了3条推文数据，那怎样输入命令来索引到这些信息呢？ElasticSearch的7.4.2版本已经很简化了命令的写法，就是以下这样：
+GET /twitter/_doc/1
+*GET后面有空格。Twitter是索引名称，_doc是索引类型名称，1是ID。
+果然，我获得如下输出：
+{
+  "_index" : "twitter",
+  "_type" : "_doc",
+  "_id" : "1",
+  "_version" : 1,
+  "result" : "updated",
+  "_shards" : {
+    "total" : 2,
+    "successful" : 1,
+    "failed" : 0
+  },
+  "_seq_no" : 3,
+  "_primary_term" : 3
+}
+
+现在自己试试吧，在Kibana中输入：
+GET /twitter/_doc/2
+GET /twitter/_doc/3
+看看你能否获得第二条和第三条tweet?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
