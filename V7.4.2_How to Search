@@ -1,0 +1,70 @@
+搜索用户为kimchy的信息
+上一个file中说了如何输入(put)和索引（Index）Kimchy的信息，现在我们接着看搜索命令是怎样写的
+
+1.  搜索已存储的所有推文
+
+命令行的写法：
+GET /twitter/_search
+{
+    "query" : {
+        "match_all" : {}
+    }
+}
+
+2. 搜索用户为kimchy的信息
+命令行有两种写法：
+写法1： GET /twitter/_search?q=user:kimchy
+写法2： GET /twitter/_search
+{
+    "query" : {
+        "match" : { "user": "kimchy" }
+    }
+}
+
+获得以下输出：
+{
+  "hits" : {
+    "total" : {
+      "value" : 3,
+      "relation" : "eq"
+    },
+    "max_score" : 0.31365755,
+    "hits" : [
+      {
+        "_index" : "twitter",
+        "_type" : "_doc",
+        "_id" : "2",
+        "_score" : 0.31365755,
+        "_source" : {
+          "user" : "kimchy",
+          "post_date" : "2019-12-22T14:12:12",
+          "message" : "Another tweet, will it be indexed?"
+        }
+      },
+      {
+        "_index" : "twitter",
+        "_type" : "_doc",
+        "_id" : "1",
+        "_score" : 0.31365755,
+        "_source" : {
+          "user" : "kimchy",
+          "post_date" : "2019-12-15T13:12:00",
+          "message" : "Trying out Elasticsearch, so far so good?"
+        }
+      }
+    ]
+  }
+}
+从结果中可以看到，ID为2和ID为1的信息被搜索出来了。
+
+3.范围搜索
+搜索在某个范围内的的信息，如某个时间段内推文，命令的写法：
+GET /twitter/_search
+{
+    "query" : {
+        "range" : {
+            "post_date" : { "from" : "2019-12-15T13:00:00", "to" : "2019-12-22T14:00:00" }
+        }
+    }
+}
+看看你能搜索到几条信息？
