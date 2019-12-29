@@ -1,0 +1,28 @@
+ElasticSearch最新版本7.4.2怎么用？小白边学边总结
+
+1.	环境配置
+用ElasticSearch来查找数据，首先要安装ElasticSearch软件。去ElasticSearch官网下载就可以。
+安装ElasticSearch软件后，还需要再下载一个配套的软件，这个软件是一个可视化窗口，在这里输入命令行（就是写类似代码的东西）。跟ElasticSearch配套使用的可视化窗口软件有很多，我这里用的是Kibana软件（还有个叫Curl的软件）。这个Kibana软件在ElasticSearch官网中找到后下载即可。
+
+我碰到的问题：
+在中国大陆下载这两个软件是非常困难的，因为他们的服务器在国外。我刚开始配置环境的时候下载这两个软件，下载界面提示剩余下载时间为1天。
+
+解决办法是：
+在电脑上装个VPN，翻墙后，两个软件5分钟内就下载安装好了。
+
+2.	如何开始运行ElasticSearch?
+找到自己的ElasticSearch文件夹，打开bin文件，点击ElasticSearch.bat文件后出现一个黑色窗口。等待窗口自动运行完后，就算是已经启动ElasticSearch了。
+之后可以验证一下ElasticSearch是否启动成功：打开浏览器，在里面输入http://localhost:9200
+ 
+3.	打开Kibana
+Kibana才是最后我们要写命令行的地方。只有先成功运行ElasticSearch后Kibana才能成功运行。
+同样，找到自己的Kibana文件夹，打开bin文件，点击Kibana.bat文件后又出现一个黑色窗口, 等待窗口自动运行完后，就算是已经启动Kibana了。
+
+ 
+
+之后打开Kibana操作界面，方法是：打开浏览器，输入：http://localhost:5601 
+
+点击左侧列的开发工具这个扳手图片，我们的命令行页面就出来了！
+ 
+
+
