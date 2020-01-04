@@ -1,7 +1,5 @@
-<font face="微软雅黑">我是微软雅黑</font>
-<font size=5>我是尺寸</font>
-
-ElasticSearch最新版本7.4.2怎么用？小白边学边总结
+[[intro]]
+== ElasticSearch最新版本7.4.2怎么用？小白边学边总结
 
 1.	环境配置
 用ElasticSearch来查找数据，首先要安装ElasticSearch软件。去ElasticSearch官网下载自己电脑系统对应的软件包就可以。
