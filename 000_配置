@@ -2,8 +2,7 @@ ElasticSearch最新版本7.4.2怎么用？小白边学边总结
 
 1.	环境配置
 用ElasticSearch来查找数据，首先要安装ElasticSearch软件。去ElasticSearch官网下载自己电脑系统对应的软件包就可以。
-安装ElasticSearch软件后，还需要再下载一个配套的软件，这个软件是一个可视化窗口，在这里输入命令行（就是写类似代码的东西）。跟ElasticSearch配套使用的可
-视化窗口软件有很多，我这里用的是Kibana软件（还有个叫Curl的软件）。这个Kibana软件在ElasticSearch官网中找到后下载即可。
+安装ElasticSearch软件后，还需要再下载一个配套的软件，这个软件是一个可视化窗口，在这里输入命令行（就是写类似代码的东西）。跟ElasticSearch配套使用的可视化窗口软件有很多，我这里用的是Kibana软件（还有个叫Curl的软件）。这个Kibana软件在ElasticSearch官网中找到后下载即可。
 
 我碰到的问题：
 在中国大陆下载这两个软件是非常困难的，因为他们的服务器在国外。我刚开始配置环境的时候下载这两个软件，下载界面提示剩余下载时间为1天。
@@ -11,15 +10,12 @@ ElasticSearch最新版本7.4.2怎么用？小白边学边总结
 在电脑上装个VPN，翻墙后，两个软件5分钟内就下载安装好了。
 
 跟之前版本的对比：
-我对比了ES旧版本的安装方法，V7.0版本之前的ES下载安装后还需要你自己配置Java语言环境，也即是去JDK官网下载安装Java Development Kit。但是V7.0版本之后的
-就不需要再自己配置Java语音环境了，因为之后的版本ES包中都包含了JDK文件，ES下载安装后可以直接使用。这使ES的使用更简单了，但是一个缺点就是ES压缩包由原来
-的100MB变成了300MB！
+我对比了ES旧版本的安装方法，V7.0版本之前的ES下载安装后还需要你自己配置Java语言环境，也即是去JDK官网下载安装Java Development Kit。但是V7.0版本之后的就不需要再自己配置Java语音环境了，因为之后的版本ES包中都包含了JDK文件，ES下载安装后可以直接使用。这使ES的使用更简单了，但是一个缺点就是ES压缩包由原来的100MB变成了300MB！
 
 
 2.	如何开始运行ElasticSearch?
 
-如果你的电脑是Windows系统：找到自己的ElasticSearch文件夹，找到bin目录，运行ElasticSearch.bat文件后出现一个黑色窗口。如果你的电脑是Mac系统或Linux系统，
-那你就可以直接在bin目录下运行elasticsearch文件。等待窗口自动运行完后，就算是已经启动ElasticSearch了。
+如果你的电脑是Windows系统：找到自己的ElasticSearch文件夹，找到bin目录，运行ElasticSearch.bat文件后出现一个黑色窗口。如果你的电脑是Mac系统或Linux系统，那你就可以直接在bin目录下运行elasticsearch文件。等待窗口自动运行完后，就算是已经启动ElasticSearch了。
 
 之后可以验证一下ElasticSearch是否启动成功：打开浏览器，在里面输入http://localhost:9200
  
