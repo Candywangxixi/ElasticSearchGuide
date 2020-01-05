@@ -1,4 +1,4 @@
-[[self-create index]]
+[[self_create]]
 === 怎样手动创建索
 既然ElasticSearch可以默认一个索引，那我们也可以自己手动创建一个索引。
 这样写：
