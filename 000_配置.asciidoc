@@ -7,9 +7,13 @@
 
 下载链接：
 鉴于很多中国大陆的同学翻墙困难，安装软件需要很长时间。我特此将V7.4.2版本的ElasticSearch 和Kibana软件包（Windows, Linux, Mac三种系统的都有）保存到了我的百度网盘中，
+
 下载链接：https://pan.baidu.com/s/1KW9nenxUmlOir9WqFHM0Eg 
+
 提取码：3iik
+
 当然如果你电脑连有VPN，能实现翻墙自由，那你也可以直接在ElasticSearch官网上下载，
+
 官网链接：https://www.elastic.co/cn/downloads/elasticsearch
 
 
