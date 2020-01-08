@@ -5,10 +5,12 @@
 用ElasticSearch来查找数据，首先要安装ElasticSearch软件。去ElasticSearch官网下载自己电脑系统对应的软件包就可以。
 安装ElasticSearch软件后，还需要再下载一个配套的软件，这个软件是一个可视化窗口，在这里输入命令行（就是写类似代码的东西）。跟ElasticSearch配套使用的可视化窗口软件有很多，我这里用的是Kibana软件（还有个叫Curl的软件）。这个Kibana软件在ElasticSearch官网中找到后下载即可。
 
-我碰到的问题：
-在中国大陆下载这两个软件是非常困难的，因为他们的服务器在国外。我刚开始配置环境的时候下载这两个软件，下载界面提示剩余下载时间为1天。
-解决办法是：
-在电脑上装个VPN，翻墙后，两个软件5分钟内就下载安装好了。鉴于很多中国大陆的同学翻墙困难，我特此将V7.4.2版本的ElasticSearch 和Kibana软件包下载下来，放在这里：
+下载链接：
+鉴于很多中国大陆的同学翻墙困难，安装软件需要很长时间。我特此将V7.4.2版本的ElasticSearch 和Kibana软件包（Windows, Linux, Mac三种系统的都有）保存到了我的百度网盘中，
+下载链接：https://pan.baidu.com/s/1KW9nenxUmlOir9WqFHM0Eg 
+提取码：3iik
+当然如果你电脑连有VPN，能实现翻墙自由，那你也可以直接在ElasticSearch官网上下载，
+官网链接：https://www.elastic.co/cn/downloads/elasticsearch
 
 
 跟之前版本的对比：
